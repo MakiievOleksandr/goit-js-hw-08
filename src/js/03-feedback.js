@@ -29,9 +29,11 @@ function onSubmitClick(evt) {
 function checkStorage() {
   const savedData = localStorage.getItem('feedback-form-state');
   const parsedData = JSON.parse(savedData);
-
-  if (savedData) {
+  if (savedData && parsedData.email !== undefined) {
     inputEmailEl.value = parsedData.email;
+  }
+
+  if (savedData && parsedData.message !== undefined) {
     inputTextEl.value = parsedData.message;
   }
 }
