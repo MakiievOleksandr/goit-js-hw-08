@@ -6,7 +6,10 @@ const inputTextEl = document.querySelector('textarea[name="message"]');
 
 checkStorage();
 
-const formInputData = {};
+const formInputData = {
+  email: inputEmailEl.value,
+  message: inputTextEl.value,
+};
 
 form.addEventListener('input', throttle(onFormInput, 500));
 form.addEventListener('submit', onSubmitClick);
